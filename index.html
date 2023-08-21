@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Programação</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div style="color: #fdfd96;" class="logo">Urumaco</div>
+            <div class="search">
+                <input type="text" placeholder="Pesquisar">
+                <button style="color: #484D50;">Buscar</button>
+            </div>
+            <div class="menu">
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
+                <ul class="menu-list">
+                    <!-- ... (itens de menu) ... -->
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dinossauros</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="banner">
+        <img src="banner.jpg" alt="Banner">
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <div style="background-color: #484D50;" class="carousel-item">
+                <img src="produto1.jpg" alt="Produto 3">
+                <h3 style="color: white;">Abelissauro</h3>
+                <p style="color: white;">Carnivoro</p>
+            </div>
+            <div style="background-color: #484D50;" class="carousel-item">
+                <img src="produto2.jpg" alt="Produto 3">
+                <h3 style="color: white;">Apatossauro</h3>
+                <p style="color: white;">Herbivaro</p>
+            </div>
+            <div style="background-color: #484D50;" class="carousel-item">
+                <img src="produto3.jpg" alt="Produto 3">
+                <h3 style="color: white;">Utharaptor</h3>
+                <p style="color: white;">Carnivoro</p>
+            </div>
+            <div style="background-color: #484D50;" class="carousel-item">
+                <img src="produto4.jpg" alt="Produto 3">
+                <h3 style="color: white;">Galimimus</h3>
+                <p style="color: white;">Ornivoro</p>
+            </div>
+            <div style="background-color: #484D50;" class="carousel-item">
+                <img src="produto5.jpg" alt="Produto 3">
+                <h3 style="color: white;">Allossauro</h3>
+                <p style="color: white;">Carnivoro</p>
+            </div>
+            <!-- Adicione mais itens de carrossel conforme necessário -->
+        </div>
+    </div>
+
+    <div class="carousel-controls">
+        <div class="carousel-control" onclick="prevSlide()">&#10094;</div>
+        <div class="carousel-control" onclick="nextSlide()">&#10095;</div>
+    </div>
+    <script>
+        // Restante do seu código aqui
+
+        // Funções para controlar o carrossel
+        var carouselSlide = document.querySelector(".carousel-slide");
+        var carouselItems = document.querySelectorAll(".carousel-item");
+        var currentIndex = 0;
+
+        function showSlide(index) {
+            currentIndex = index;
+            var translateX = -currentIndex * (100 / carouselItems.length);
+            carouselSlide.style.transform = `translateX(${translateX}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            showSlide(currentIndex);
+        }
+    </script>
+    <div class="produtos">
+        <div class="produto">
+            <img src="produto1.jpg" alt="Produto 1">
+            <h3>Abelissauro</h3>
+            <p>Bipede</p>
+            <button onclick="comprar(1)">Ver</button>
+        </div>    
+        <div class="produto">
+            <img src="produto2.jpg" alt="Produto 1">
+            <h3>Apatossauro</h3>
+            <p>Quadrupede</p>
+            <button onclick="comprar(2)">Ver</button>
+        </div>    
+        <div class="produto">
+            <img src="produto3.jpg" alt="Produto 1">
+            <h3>Utharaptor</h3>
+            <p>Bipede</p>
+            <button onclick="comprar(3)">Ver</button>
+        </div>    
+        <div class="produto">
+            <img src="produto4.jpg" alt="Produto 1">
+            <h3>Galimimus</h3>
+            <p>Bipede</p>
+            <button onclick="comprar(4)">Ver</button>
+        </div>    
+        <div class="produto">
+            <img src="produto5.jpg" alt="Produto 1">
+            <h3>Allossauro</h3>
+            <p>Bipede</p>
+            <button onclick="comprar(5)">Ver</button>
+        </div>    
+        <div class="produto">
+            <img src="produto6.jpg" alt="Produto 1">
+            <h3>Estegossauro</h3>
+            <p>Quadrupede</p>
+            <button onclick="comprar(6)">Ver</button>
+        </div>    
+    </div>
+    <script>
+        // Restante do seu código aqui
+
+        function search() {
+            var searchTerm = document.getElementById("searchInput").value;
+            // Aqui você pode implementar a lógica de pesquisa, por exemplo, redirecionando para uma página de resultados de pesquisa.
+            // Por enquanto, vamos apenas mostrar uma mensagem de alerta com o termo de pesquisa.
+            alert("Você buscou por: " + searchTerm);
+        }
+        
+        function toggleCategoryMenu() {
+            // Implemente a lógica para mostrar/ocultar o menu de categorias aqui.
+        }
+
+        function comprar(produto) {
+            // Implemente a lógica de compra aqui, por exemplo, adicionar o produto ao carrinho.
+            alert("Você comprou o produto: " + produto);
+        }
+    </script>
+    <footer style="background-color: #484D50;">
+        <p style="color: white;">&copy; 2023 Caio Felipe e Jardian</p>
+    </footer>
+</body>
+</html>
